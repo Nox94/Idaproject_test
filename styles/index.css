@@ -1,0 +1,45 @@
+/* source-sans-pro-regular - cyrillic */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.woff2") format("woff2"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.woff") format("woff"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.ttf") format("truetype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.svg#SourceSansPro") format("svg");
+  /* Legacy iOS */
+}
+
+/* source-sans-pro-600 - cyrillic */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.eot?#iefix") format("embedded-opentype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.woff2") format("woff2"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.woff") format("woff"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.ttf") format("truetype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.svg#SourceSansPro") format("svg");
+  /* Legacy iOS */
+}
+
+/* inter-regular - cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./inter/inter-v3-cyrillic-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("./inter/inter-v3-cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("./inter/inter-v3-cyrillic-regular.woff2") format("woff2"), url("./inter/inter-v3-cyrillic-regular.woff") format("woff"), url("./inter/inter-v3-cyrillic-regular.ttf") format("truetype"), url("./inter/inter-v3-cyrillic-regular.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+
+/* inter-600 - cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./inter/inter-v3-cyrillic-600.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("./inter/inter-v3-cyrillic-600.eot?#iefix") format("embedded-opentype"), url("./inter/inter-v3-cyrillic-600.woff2") format("woff2"), url("./inter/inter-v3-cyrillic-600.woff") format("woff"), url("./inter/inter-v3-cyrillic-600.ttf") format("truetype"), url("./inter/inter-v3-cyrillic-600.svg#Inter") format("svg");
+  /* Legacy iOS */
+}
+
+/*# sourceMappingURL=index.css.map */
