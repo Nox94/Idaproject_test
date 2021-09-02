@@ -6,30 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Тестовое задание</title>
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body class="page">
-<h1>Добавление товара</h1>
-<select>
+<h1 class="outline">Добавление товара</h1>
+<select disabled class="outline">
     <option value="">По умолчанию</option>
 </select>
-<div class="add-panel">
-    <form class="form">
-        <label for="card_name">Наименование товара</label>
-        <input type="text" name="card_name" id="card_name" minlength="2" maxlength="30" autocomplete="off"
-               placeholder="Введите наименование товара" required>
-        <label for="card_description">Описание товара</label>
-        <input type="text" name="card_description" id="card_description" minlength="2" maxlength="150"
-               autocomplete="off" placeholder="Введите описание товара">
-        <label for="card_link">Ссылка на изображение товара</label>
-        <input type="url" name="card_link" id="card_link" autocomplete="off" placeholder="Введите ссылку" required>
-        <label for="card_price">Цена товара</label>
-        <input type="number" name="card_price" id="card_price" autocomplete="off" placeholder="Введите цену"
-               required>
-        <button type="button" disabled>Добавить товар</button>
-    </form>
-</div>
-<section class="cards">
-    <div class="card">
+
+<form class="outline">
+    <label for="card_name">Наименование товара</label>
+    <input type="text" name="card_name" id="card_name" minlength="2" maxlength="30" autocomplete="off"
+           placeholder="Введите наименование товара" required>
+    <label for="card_description">Описание товара</label>
+    <textarea type="text" name="card_description" id="card_description" minlength="2" maxlength="150"
+              autocomplete="off" placeholder="Введите описание товара"></textarea>
+    <label for="card_link">Ссылка на изображение товара</label>
+    <input type="url" name="card_link" id="card_link" autocomplete="off" placeholder="Введите ссылку" required>
+    <label for="card_price">Цена товара</label>
+    <input type="number" name="card_price" id="card_price" autocomplete="off" placeholder="Введите цену"
+           required>
+    <button type="button" disabled>Добавить товар</button>
+</form>
+
+<section class="cards outline">
+    <div class="card outline">
         <img src="images/polaroid.png" alt="Фотография товара.">
         <h2>Наименование товара</h2>
         <p>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в

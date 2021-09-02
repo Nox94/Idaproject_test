@@ -1,3 +1,116 @@
+//сброс стилей браузера
+@import "../vendor/normalize.css";
 //шрифты
-@import "../vendor/fonts/source_sans_pro";
-@import "../vendor/fonts/inter";
+@import "../vendor/fonts/source_sans_pro.css";
+@import "../vendor/fonts/inter.css";
+//переменные
+$general-font: "Source Sans Pro", serif;
+$additional-font: "Inter", serif;
+$background-color: #E5E5E5;
+$primary-color: #3F3F3F;
+$label-color: #49485E;
+$placeholder-color: #B4B4B4;
+$form-background-color: #FFFEFB;
+%for-flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+//общий стиль страницы
+.page {
+  min-width: 360px;
+  width: 100%;
+  max-width: 1440px;
+  font-family: $general-font;
+  background-color: $background-color;
+  color: $primary-color;
+  @extend %for-flexbox;
+  box-sizing: border-box;
+  padding: 20px;
+
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 100%;
+    color: $primary-color;
+    margin: 0 0 30px 0;
+    padding: 10px 0 0 0;
+  }
+
+  select {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 0 20px 0;
+    font-size: 12px;
+    line-height: 150%;
+
+    &:disabled {
+      background-color: $form-background-color;
+      color: $placeholder-color;
+    }
+  }
+}
+
+.outline {
+  outline: 1px solid violet;
+}
+
+form {
+  @extend %for-flexbox;
+  width: 100%;
+  max-width: 332px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 14px;
+  background-color: $form-background-color;
+
+  label {
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: $label-color;
+    width: 100%;
+    text-align: left;
+    margin: 0 0 4px 0;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 0 0 16px 0;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-align: left;
+    font-size: 12px;
+    color: $placeholder-color;
+
+    &:last-of-type {
+      margin: 0 0 24px 0;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 12px;
+    color: $placeholder-color;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
+    margin: 0 0 16px 0;
+  }
+}

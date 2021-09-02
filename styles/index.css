@@ -1,45 +1,106 @@
-/* source-sans-pro-regular - cyrillic */
-@font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.eot");
-  /* IE9 Compat Modes */
-  src: local(""), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.woff2") format("woff2"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.woff") format("woff"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.ttf") format("truetype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-regular.svg#SourceSansPro") format("svg");
-  /* Legacy iOS */
+@import "../vendor/normalize.css";
+@import "../vendor/fonts/source_sans_pro.css";
+@import "../vendor/fonts/inter.css";
+
+form, .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* source-sans-pro-600 - cyrillic */
-@font-face {
-  font-family: "Source Sans Pro";
+.page {
+  min-width: 360px;
+  width: 100%;
+  max-width: 1440px;
+  font-family: "Source Sans Pro", serif;
+  background-color: #E5E5E5;
+  color: #3F3F3F;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.page h1, .page h2, .page p {
+  margin: 0;
+  padding: 0;
+}
+
+.page h1 {
   font-style: normal;
   font-weight: 600;
-  src: url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.eot");
-  /* IE9 Compat Modes */
-  src: local(""), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.eot?#iefix") format("embedded-opentype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.woff2") format("woff2"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.woff") format("woff"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.ttf") format("truetype"), url("./source_sans_pro/source-sans-pro-v14-cyrillic-600.svg#SourceSansPro") format("svg");
-  /* Legacy iOS */
+  font-size: 22px;
+  line-height: 100%;
+  color: #3F3F3F;
+  margin: 0 0 30px 0;
+  padding: 10px 0 0 0;
 }
 
-/* inter-regular - cyrillic */
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./inter/inter-v3-cyrillic-regular.eot");
-  /* IE9 Compat Modes */
-  src: local(""), url("./inter/inter-v3-cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("./inter/inter-v3-cyrillic-regular.woff2") format("woff2"), url("./inter/inter-v3-cyrillic-regular.woff") format("woff"), url("./inter/inter-v3-cyrillic-regular.ttf") format("truetype"), url("./inter/inter-v3-cyrillic-regular.svg#Inter") format("svg");
-  /* Legacy iOS */
+.page select {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0 20px 0;
+  font-size: 12px;
+  line-height: 150%;
 }
 
-/* inter-600 - cyrillic */
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  src: url("./inter/inter-v3-cyrillic-600.eot");
-  /* IE9 Compat Modes */
-  src: local(""), url("./inter/inter-v3-cyrillic-600.eot?#iefix") format("embedded-opentype"), url("./inter/inter-v3-cyrillic-600.woff2") format("woff2"), url("./inter/inter-v3-cyrillic-600.woff") format("woff"), url("./inter/inter-v3-cyrillic-600.ttf") format("truetype"), url("./inter/inter-v3-cyrillic-600.svg#Inter") format("svg");
-  /* Legacy iOS */
+.page select:disabled {
+  background-color: #FFFEFB;
+  color: #B4B4B4;
+}
+
+.outline {
+  outline: 1px solid violet;
+}
+
+form {
+  width: 100%;
+  max-width: 332px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 14px;
+  background-color: #FFFEFB;
+}
+
+form label {
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+  color: #49485E;
+  width: 100%;
+  text-align: left;
+  margin: 0 0 4px 0;
+}
+
+form input {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 0 0 16px 0;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  text-align: left;
+  font-size: 12px;
+  color: #B4B4B4;
+}
+
+form input:last-of-type {
+  margin: 0 0 24px 0;
+}
+
+form textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 12px;
+  color: #B4B4B4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  margin: 0 0 16px 0;
 }
 
 /*# sourceMappingURL=index.css.map */
