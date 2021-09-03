@@ -14,19 +14,23 @@
     <option value="">По умолчанию</option>
 </select>
 
-<form class="outline">
-    <label for="card_name">Наименование товара</label>
-    <input type="text" name="card_name" id="card_name" minlength="2" maxlength="30" autocomplete="off"
+<!--class="form__input_state_invalid" добавить для проверки состояния невалидности инпута-->
+
+<form class="form" action="#" autocomplete="off" novalidate>
+    <label for="card_name">Наименование товара<span>&ast;</span></label>
+    <input type="text" name="card_name" id="card_name" minlength="2" maxlength="30"
            placeholder="Введите наименование товара" required>
+    <span class="error"></span>
     <label for="card_description">Описание товара</label>
     <textarea type="text" name="card_description" id="card_description" minlength="2" maxlength="150"
-              autocomplete="off" placeholder="Введите описание товара"></textarea>
-    <label for="card_link">Ссылка на изображение товара</label>
-    <input type="url" name="card_link" id="card_link" autocomplete="off" placeholder="Введите ссылку" required>
-    <label for="card_price">Цена товара</label>
-    <input type="number" name="card_price" id="card_price" autocomplete="off" placeholder="Введите цену"
-           required>
-    <button type="button" disabled>Добавить товар</button>
+              placeholder="Введите описание товара"></textarea>
+    <label for="card_link">Ссылка на изображение товара<span>&ast;</span></label>
+    <input type="url" name="card_link" id="card_link" placeholder="Введите ссылку" required>
+    <span class="error"></span>
+    <label for="card_price">Цена товара<span>&ast;</span></label>
+    <input type="number" name="card_price" id="card_price" placeholder="Введите цену" required>
+    <span class="error"></span>
+    <button type="submit" disabled>Добавить товар</button>
 </form>
 
 <section class="cards outline">

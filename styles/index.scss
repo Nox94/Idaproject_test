@@ -11,6 +11,9 @@ $primary-color: #3F3F3F;
 $label-color: #49485E;
 $placeholder-color: #B4B4B4;
 $form-background-color: #FFFEFB;
+$input-invalid-color: #FF8484;
+$btn-enable-color: #FFFFFF;
+$btn-enable-bckgrnd-color: #7BAE73;
 %for-flexbox {
   display: flex;
   flex-direction: column;
@@ -71,46 +74,101 @@ form {
   width: 100%;
   max-width: 332px;
   border-radius: 4px;
-  box-sizing: border-box;
   padding: 14px;
   background-color: $form-background-color;
+  margin: 0 0 20px 0;
 
   label {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 130%;
     letter-spacing: -0.02em;
     color: $label-color;
     width: 100%;
     text-align: left;
     margin: 0 0 4px 0;
+
+    span {
+      color: $input-invalid-color;
+    }
+  }
+
+  //убирает стрелки у числового поля
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  //убирает стрелки у числового поля в firefox
+  input[type='number'] {
+    -moz-appearance: textfield;
   }
 
   input {
-    width: 100%;
-    padding: 8px 12px;
-    margin: 0 0 16px 0;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    text-align: left;
-    font-size: 12px;
-    color: $placeholder-color;
-
     &:last-of-type {
       margin: 0 0 24px 0;
+    }
+
+    &.form__input_state_invalid {
+      outline: 1px solid $input-invalid-color;
+    }
+
+    &:required + span .error::before {
+      content: '*Required';
+    }
+  }
+
+  button {
+    width: 100%;
+    max-width: 284px;
+    padding: 10px 0;
+    border: none {
+      radius: 10px;
+    }
+    font-family: $additional-font;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    &:disabled {
+      color: $placeholder-color;
+    }
+
+    &:enabled {
+      color: $btn-enable-color;
+      background-color: $btn-enable-bckgrnd-color;
     }
   }
 
   textarea {
-    width: 100%;
-    border: none;
     resize: none;
-    border-radius: 4px;
+  }
+
+  input, textarea {
+    border: none {
+      radius: 4px;
+    }
+    width: 100%;
     text-align: left;
     font-size: 12px;
-    color: $placeholder-color;
+    color: $primary-color;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 8px 12px;
     margin: 0 0 16px 0;
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  input:focus, textarea:focus {
+    //color: $primary-color;
+    outline: 1px solid gray;
+  }
+
+  &, input, textarea, button {
+    box-sizing: border-box;
   }
 }
