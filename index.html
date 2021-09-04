@@ -15,21 +15,22 @@
 </select>
 
 <!--class="form__input_state_invalid" добавить для проверки состояния невалидности инпута-->
+<!--убрать класс hidden у span.error, чтобы посмотреть надпись об ошибке-->
 
 <form class="form" action="#" autocomplete="off" novalidate>
-    <label for="card_name">Наименование товара<span>&ast;</span></label>
+    <label for="card_name">Наименование товара<span></span></label>
     <input type="text" name="card_name" id="card_name" minlength="2" maxlength="30"
            placeholder="Введите наименование товара" required>
-    <span class="error"></span>
+    <span class="error hidden">Поле является обязательным</span>
     <label for="card_description">Описание товара</label>
     <textarea type="text" name="card_description" id="card_description" minlength="2" maxlength="150"
               placeholder="Введите описание товара"></textarea>
-    <label for="card_link">Ссылка на изображение товара<span>&ast;</span></label>
+    <label for="card_link">Ссылка на изображение товара<span></span></label>
     <input type="url" name="card_link" id="card_link" placeholder="Введите ссылку" required>
-    <span class="error"></span>
-    <label for="card_price">Цена товара<span>&ast;</span></label>
+    <span class="error hidden">Поле является обязательным</span>
+    <label for="card_price">Цена товара<span></span></label>
     <input type="number" name="card_price" id="card_price" placeholder="Введите цену" required>
-    <span class="error"></span>
+    <span class="error hidden">Поле является обязательным</span>
     <button type="submit" disabled>Добавить товар</button>
 </form>
 

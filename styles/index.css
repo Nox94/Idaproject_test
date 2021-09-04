@@ -5,12 +5,17 @@ section.cards div.card, form, .page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.hidden {
+  display: none;
 }
 
 .page {
   min-width: 360px;
   width: 100%;
+  margin: 0 auto;
   max-width: 1440px;
   font-family: "Source Sans Pro", serif;
   font-weight: normal;
@@ -19,6 +24,28 @@ section.cards div.card, form, .page {
   color: #3F3F3F;
   box-sizing: border-box;
   padding: 20px;
+}
+@media screen and (min-width: 1000px) {
+  .page {
+    display: grid;
+    grid-template-areas: "heading select" "form cards";
+    grid-template-columns: 30% 70%;
+    grid-auto-rows: 36px 1fr;
+    gap: 16px;
+    justify-items: center;
+    align-items: start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .page {
+    grid-template-columns: 20% 80%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .page {
+    padding: 32px;
+    grid-template-columns: 332px 1028px;
+  }
 }
 .page h1, .page h2, .page p {
   margin: 0;
@@ -32,6 +59,13 @@ section.cards div.card, form, .page {
   margin: 0 0 30px 0;
   padding: 10px 0 0 0;
 }
+@media screen and (min-width: 1000px) {
+  .page h1 {
+    margin: 0;
+    padding: 0;
+    align-self: center;
+  }
+}
 .page select {
   padding: 6px 10px;
   border: none;
@@ -41,6 +75,13 @@ section.cards div.card, form, .page {
   margin: 0 0 20px 0;
   font-size: 12px;
   line-height: 150%;
+}
+@media screen and (min-width: 1000px) {
+  .page select {
+    justify-self: right;
+    margin: 0;
+    padding: 10px 16px;
+  }
 }
 .page select:disabled {
   background-color: #FFFEFB;
@@ -53,23 +94,54 @@ section.cards div.card, form, .page {
 
 form {
   width: 100%;
-  max-width: 332px;
   border-radius: 4px;
   padding: 14px;
   background-color: #FFFEFB;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
   margin: 0 0 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+@media screen and (min-width: 800px) {
+  form {
+    max-width: 80%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  form {
+    max-width: 332px;
+    margin: 0;
+  }
 }
 form label {
   font-size: 10px;
   line-height: 130%;
   letter-spacing: -0.02em;
   color: #49485E;
-  width: 100%;
+  width: max-content;
   text-align: left;
+  align-self: flex-start;
   margin: 0 0 4px 0;
+  position: relative;
 }
 form label span {
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #FF8484;
+  position: absolute;
+  top: 0;
+  right: -5px;
+}
+form span.error {
   color: #FF8484;
+  font-size: 8px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+}
+form span.error:last-of-type {
+  margin: 5px 0 0 0;
 }
 form input::-webkit-outer-spin-button,
 form input::-webkit-inner-spin-button {
@@ -80,7 +152,7 @@ form input[type=number] {
   -moz-appearance: textfield;
 }
 form input:last-of-type {
-  margin: 0 0 24px 0;
+  margin: 0;
 }
 form input.form__input_state_invalid {
   outline: 1px solid #FF8484;
@@ -92,6 +164,7 @@ form button {
   width: 100%;
   max-width: 284px;
   padding: 10px 0;
+  margin: 24px 0 0 0;
   border: none;
   border-radius: 10px;
   font-family: "Inter", serif;
@@ -136,12 +209,18 @@ section.cards {
   width: 100%;
   max-width: 1028px;
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 12px;
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
+@media screen and (min-width: 1280px) {
+  section.cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 section.cards div.card {
   background-color: #FFFEFB;
+  min-width: 320px;
   width: 100%;
   max-width: 332px;
   padding: 0 0 10px 0;
@@ -149,6 +228,17 @@ section.cards div.card {
   text-align: center;
   border-radius: 4px;
   position: relative;
+  cursor: pointer;
+}
+@media screen and (min-width: 1000px) {
+  section.cards div.card {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  section.cards div.card {
+    gap: 16px;
+  }
 }
 section.cards div.card div.trash-bin {
   position: absolute;
