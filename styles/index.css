@@ -135,12 +135,15 @@ form, form input, form textarea, form button {
 section.cards {
   width: 100%;
   max-width: 1028px;
+  display: grid;
+  grid-gap: 16px;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 section.cards div.card {
   background-color: #FFFEFB;
   width: 100%;
   max-width: 332px;
-  margin: 0 0 20px 0;
   padding: 0 0 10px 0;
   box-sizing: border-box;
   text-align: center;
