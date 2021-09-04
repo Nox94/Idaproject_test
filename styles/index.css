@@ -1,7 +1,7 @@
 @import "../vendor/normalize.css";
 @import "../vendor/fonts/source_sans_pro.css";
 @import "../vendor/fonts/inter.css";
-form, .page {
+section.cards div.card, form, .page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +13,8 @@ form, .page {
   width: 100%;
   max-width: 1440px;
   font-family: "Source Sans Pro", serif;
+  font-weight: normal;
+  font-style: normal;
   background-color: #E5E5E5;
   color: #3F3F3F;
   box-sizing: border-box;
@@ -23,7 +25,6 @@ form, .page {
   padding: 0;
 }
 .page h1 {
-  font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: 100%;
@@ -58,7 +59,6 @@ form {
   background-color: #FFFEFB;
   margin: 0 0 20px 0;
 }
-
 form label {
   font-size: 10px;
   line-height: 130%;
@@ -68,33 +68,26 @@ form label {
   text-align: left;
   margin: 0 0 4px 0;
 }
-
 form label span {
   color: #FF8484;
 }
-
 form input::-webkit-outer-spin-button,
 form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 form input[type=number] {
   -moz-appearance: textfield;
 }
-
 form input:last-of-type {
   margin: 0 0 24px 0;
 }
-
 form input.form__input_state_invalid {
   outline: 1px solid #FF8484;
 }
-
 form input:required + span .error::before {
   content: "*Required";
 }
-
 form button {
   width: 100%;
   max-width: 284px;
@@ -108,20 +101,16 @@ form button {
   text-align: center;
   letter-spacing: -0.02em;
 }
-
 form button:disabled {
   color: #B4B4B4;
 }
-
 form button:enabled {
   color: #FFFFFF;
   background-color: #7BAE73;
 }
-
 form textarea {
   resize: none;
 }
-
 form input, form textarea {
   border: none;
   border-radius: 4px;
@@ -133,17 +122,64 @@ form input, form textarea {
   padding: 8px 12px;
   margin: 0 0 16px 0;
 }
-
 form input::placeholder, form textarea::placeholder {
   color: #B4B4B4;
 }
-
 form input:focus, form textarea:focus {
   outline: 1px solid gray;
 }
-
 form, form input, form textarea, form button {
   box-sizing: border-box;
+}
+
+section.cards {
+  width: 100%;
+  max-width: 1028px;
+}
+section.cards div.card {
+  background-color: #FFFEFB;
+  width: 100%;
+  max-width: 332px;
+  margin: 0 0 20px 0;
+  padding: 0 0 10px 0;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  position: relative;
+}
+section.cards div.card div.trash-bin {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 30%;
+  cursor: pointer;
+  background-image: url("../images/trashbin.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #FF8484;
+}
+section.cards div.card img {
+  width: 100%;
+  object-fit: contain;
+}
+section.cards div.card h2 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  color: #3F3F3F;
+  margin: 5px 0 10px 0;
+}
+section.cards div.card p {
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0 0 15px 0;
+}
+section.cards div.card span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 /*# sourceMappingURL=index.css.map */

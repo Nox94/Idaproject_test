@@ -26,7 +26,11 @@ $btn-enable-bckgrnd-color: #7BAE73;
   min-width: 360px;
   width: 100%;
   max-width: 1440px;
-  font-family: $general-font;
+  font: {
+    family: $general-font;
+    weight: normal;
+    style: normal;
+  }
   background-color: $background-color;
   color: $primary-color;
   @extend %for-flexbox;
@@ -39,7 +43,6 @@ $btn-enable-bckgrnd-color: #7BAE73;
   }
 
   h1 {
-    font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 100%;
@@ -164,11 +167,69 @@ form {
   }
 
   input:focus, textarea:focus {
-    //color: $primary-color;
     outline: 1px solid gray;
   }
 
   &, input, textarea, button {
     box-sizing: border-box;
+  }
+}
+
+section.cards {
+  width: 100%;
+  max-width: 1028px;
+  div.card {
+    @extend %for-flexbox;
+    background-color: $form-background-color;
+    width: 100%;
+    max-width: 332px;
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+
+    div.trash-bin {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 32px;
+      height: 32px;
+      border-radius: 30%;
+      cursor: pointer;
+      background: {
+        image: url("../images/trashbin.svg");
+        position: center;
+        repeat: no-repeat;
+        color: $input-invalid-color;
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+
+    h2 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 25px;
+      color: $primary-color;
+      margin: 5px 0 10px 0;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 20px;
+      margin: 0 0 15px 0;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 30px;
+    }
   }
 }
