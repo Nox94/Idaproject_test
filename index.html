@@ -9,33 +9,32 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body class="page">
-<h1 class="outline">Добавление товара</h1>
-<select disabled class="outline">
+<h1 class=>Добавление товара</h1>
+<select disabled class=>
     <option value="">По умолчанию</option>
 </select>
 
-<!--class="form__input_state_invalid" добавить для проверки состояния невалидности инпута-->
-<!--убрать класс hidden у span.error, чтобы посмотреть надпись об ошибке-->
+<!--убрать атрибут disabled у кнопки отправки формы для просмотра изменения состояния-->
 
 <form class="form" action="#" autocomplete="off" novalidate>
     <label for="card_name">Наименование товара<span></span></label>
     <input type="text" name="card_name" id="card_name" minlength="2" maxlength="30"
            placeholder="Введите наименование товара" required>
-    <span class="error hidden">Поле является обязательным</span>
+    <span class="error"></span>
     <label for="card_description">Описание товара</label>
     <textarea type="text" name="card_description" id="card_description" minlength="2" maxlength="150"
               placeholder="Введите описание товара"></textarea>
     <label for="card_link">Ссылка на изображение товара<span></span></label>
     <input type="url" name="card_link" id="card_link" placeholder="Введите ссылку" required>
-    <span class="error hidden">Поле является обязательным</span>
+    <span class="error"></span>
     <label for="card_price">Цена товара<span></span></label>
     <input type="number" name="card_price" id="card_price" placeholder="Введите цену" required>
-    <span class="error hidden">Поле является обязательным</span>
+    <span class="error"></span>
     <button type="submit" disabled>Добавить товар</button>
 </form>
 
-<section class="cards outline">
-    <div class="card outline">
+<section class="cards">
+    <div class="card">
         <img src="images/polaroid.png" alt="Фотография товара.">
         <h2>Наименование товара</h2>
         <p>Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в

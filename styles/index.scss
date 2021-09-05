@@ -156,9 +156,14 @@ form {
     font-size: 8px;
     line-height: 110%;
     letter-spacing: -0.02em;
+    margin: -11px 0 5px 0;
 
     &:last-of-type {
       margin: 5px 0 0 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      align-self: flex-start;
     }
   }
 
@@ -179,12 +184,22 @@ form {
       margin: 0;
     }
 
-    &.form__input_state_invalid {
+    &:valid:required:not(:focus) {
+      outline: none;
+
+      span.error {
+        display: none;
+      }
+    }
+
+    &:invalid:required:focus:not(:placeholder-shown) {
       outline: 1px solid $input-invalid-color;
     }
 
-    &:required + span .error::before {
-      content: '*Required';
+    // TODO: с этим надо разобраться. Как показывать текст ошибки?
+    &:invalid:required:focus:not(:placeholder-shown) + span.error::before {
+      content: 'Поле является обязательным';
+      display: block;
     }
   }
 
@@ -242,6 +257,15 @@ form {
 
   &, input, textarea, button {
     box-sizing: border-box;
+  }
+}
+
+//TODO: продумать сетку для карточек на grid-layout
+section.cards {
+  @extend %for-flexbox;
+
+  div {
+    margin: 0 0 20px 0;
   }
 }
 

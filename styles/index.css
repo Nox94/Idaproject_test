@@ -1,7 +1,8 @@
+@charset "UTF-8";
 @import "../vendor/normalize.css";
 @import "../vendor/fonts/source_sans_pro.css";
 @import "../vendor/fonts/inter.css";
-section.cards div.card, form, .page {
+section.cards div.card, section.cards, form, .page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,9 +140,15 @@ form span.error {
   font-size: 8px;
   line-height: 110%;
   letter-spacing: -0.02em;
+  margin: -11px 0 5px 0;
 }
 form span.error:last-of-type {
   margin: 5px 0 0 0;
+}
+@media screen and (min-width: 1000px) {
+  form span.error {
+    align-self: flex-start;
+  }
 }
 form input::-webkit-outer-spin-button,
 form input::-webkit-inner-spin-button {
@@ -154,11 +161,18 @@ form input[type=number] {
 form input:last-of-type {
   margin: 0;
 }
-form input.form__input_state_invalid {
+form input:valid:required:not(:focus) {
+  outline: none;
+}
+form input:valid:required:not(:focus) span.error {
+  display: none;
+}
+form input:invalid:required:focus:not(:placeholder-shown) {
   outline: 1px solid #FF8484;
 }
-form input:required + span .error::before {
-  content: "*Required";
+form input:invalid:required:focus:not(:placeholder-shown) + span.error::before {
+  content: "Поле является обязательным";
+  display: block;
 }
 form button {
   width: 100%;
@@ -203,6 +217,10 @@ form input:focus, form textarea:focus {
 }
 form, form input, form textarea, form button {
   box-sizing: border-box;
+}
+
+section.cards div {
+  margin: 0 0 20px 0;
 }
 
 section.cards {
