@@ -1,11 +1,28 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
 @charset "UTF-8";
 @import "../vendor/normalize.css";
 @import "../vendor/fonts/source_sans_pro.css";
 @import "../vendor/fonts/inter.css";
-section.cards div.card, form, .page {
+section.cards div.card,
+form,
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
@@ -21,34 +38,44 @@ section.cards div.card, form, .page {
   font-family: "Source Sans Pro", serif;
   font-weight: normal;
   font-style: normal;
-  background-color: #E5E5E5;
-  color: #3F3F3F;
+  background-color: #e5e5e5;
+  color: #3f3f3f;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20px;
 }
 @media screen and (min-width: 1000px) {
   .page {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: auto 16px auto;
     grid-template-areas: "heading select" "form cards";
+    -ms-grid-columns: 30% 16px 70%;
     grid-template-columns: 30% 70%;
     grid-auto-rows: 36px 1fr;
     gap: 16px;
     justify-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
   }
 }
 @media screen and (min-width: 1280px) {
   .page {
+    -ms-grid-columns: 20% 80%;
     grid-template-columns: 20% 80%;
   }
 }
 @media screen and (min-width: 1440px) {
   .page {
     padding: 32px;
+    -ms-grid-columns: 332px 1028px;
     grid-template-columns: 332px 1028px;
   }
 }
-.page h1, .page h2, .page p {
+.page h1,
+.page h2,
+.page p {
   margin: 0;
   padding: 0;
 }
@@ -56,7 +83,7 @@ section.cards div.card, form, .page {
   font-weight: 600;
   font-size: 22px;
   line-height: 100%;
-  color: #3F3F3F;
+  color: #3f3f3f;
   margin: 0 0 30px 0;
   padding: 10px 0 0 0;
 }
@@ -64,9 +91,12 @@ section.cards div.card, form, .page {
   .page h1 {
     margin: 0;
     padding: 0;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
     align-self: center;
     font-size: 28px;
     line-height: 150%;
+    -ms-grid-column-align: left;
     justify-self: left;
   }
 }
@@ -74,7 +104,9 @@ section.cards div.card, form, .page {
   padding: 6px 10px;
   border: none;
   border-radius: 4px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   margin: 0 0 20px 0;
   font-size: 12px;
@@ -83,14 +115,15 @@ section.cards div.card, form, .page {
 }
 @media screen and (min-width: 1000px) {
   .page select {
+    -ms-grid-column-align: right;
     justify-self: right;
     margin: 0;
     padding: 10px 16px;
   }
 }
 .page select:disabled {
-  background-color: #FFFEFB;
-  color: #B4B4B4;
+  background-color: #fffefb;
+  color: #b4b4b4;
 }
 
 .outline {
@@ -101,7 +134,8 @@ form {
   width: 100%;
   border-radius: 4px;
   padding: 14px;
-  background-color: #FFFEFB;
+  background-color: #fffefb;
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
   margin: 0 0 20px 0;
   position: sticky;
@@ -124,9 +158,12 @@ form label {
   font-size: 10px;
   line-height: 130%;
   letter-spacing: -0.02em;
-  color: #49485E;
+  color: #49485e;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-align: left;
+  -ms-flex-item-align: start;
   align-self: flex-start;
   margin: 0 0 4px 0;
   position: relative;
@@ -135,13 +172,13 @@ form label span {
   width: 4px;
   height: 4px;
   border-radius: 4px;
-  background-color: #FF8484;
+  background-color: #ff8484;
   position: absolute;
   top: 0;
   right: -5px;
 }
 form span.error {
-  color: #FF8484;
+  color: #ff8484;
   font-size: 8px;
   line-height: 110%;
   letter-spacing: -0.02em;
@@ -152,6 +189,7 @@ form span.error:last-of-type {
 }
 @media screen and (min-width: 1000px) {
   form span.error {
+    -ms-flex-item-align: start;
     align-self: flex-start;
   }
 }
@@ -160,7 +198,7 @@ form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-form input[type=number] {
+form input[type="number"] {
   -moz-appearance: textfield;
 }
 @media screen and (min-width: 1440px) {
@@ -178,8 +216,22 @@ form input:valid:required:not(:focus) {
 form input:valid:required:not(:focus) span.error {
   display: none;
 }
+form input:invalid:required:focus:not(:-moz-placeholder-shown) {
+  outline: 1px solid #ff8484;
+}
+form input:invalid:required:focus:not(:-ms-input-placeholder) {
+  outline: 1px solid #ff8484;
+}
 form input:invalid:required:focus:not(:placeholder-shown) {
-  outline: 1px solid #FF8484;
+  outline: 1px solid #ff8484;
+}
+form input:invalid:required:focus:not(:-moz-placeholder-shown) + span.error::before {
+  content: "Поле является обязательным";
+  display: block;
+}
+form input:invalid:required:focus:not(:-ms-input-placeholder) + span.error::before {
+  content: "Поле является обязательным";
+  display: block;
 }
 form input:invalid:required:focus:not(:placeholder-shown) + span.error::before {
   content: "Поле является обязательным";
@@ -201,40 +253,65 @@ form button {
   letter-spacing: -0.02em;
 }
 form button:disabled {
-  color: #B4B4B4;
+  color: #b4b4b4;
   cursor: default;
 }
 form button:enabled {
-  color: #FFFFFF;
-  background-color: #7BAE73;
+  color: #ffffff;
+  background-color: #7bae73;
 }
 form textarea {
   resize: none;
 }
-form input, form textarea {
+form input,
+form textarea {
   border: none;
   border-radius: 4px;
   width: 100%;
   text-align: left;
   font-size: 12px;
-  color: #3F3F3F;
+  color: #3f3f3f;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 8px 12px;
   margin: 0 0 16px 0;
 }
-form input::placeholder, form textarea::placeholder {
-  color: #B4B4B4;
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
+  color: #b4b4b4;
 }
-form input:focus, form textarea:focus {
+form input::-moz-placeholder,
+form textarea::-moz-placeholder {
+  color: #b4b4b4;
+}
+form input:-ms-input-placeholder,
+form textarea:-ms-input-placeholder {
+  color: #b4b4b4;
+}
+form input::-ms-input-placeholder,
+form textarea::-ms-input-placeholder {
+  color: #b4b4b4;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: #b4b4b4;
+}
+form input:focus,
+form textarea:focus {
   outline: 1px solid gray;
 }
-form, form input, form textarea, form button {
+form,
+form input,
+form textarea,
+form button {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 section.cards {
   width: 100%;
   max-width: 1028px;
+  display: -ms-grid;
   display: grid;
   grid-gap: 12px;
   justify-items: center;
@@ -242,15 +319,17 @@ section.cards {
 }
 @media screen and (min-width: 1280px) {
   section.cards {
+    -ms-grid-columns: 1fr 12px 1fr 12px 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 section.cards div.card {
-  background-color: #FFFEFB;
+  background-color: #fffefb;
   min-width: 320px;
   width: 100%;
   max-width: 332px;
   padding: 0 0 10px 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-align: center;
   border-radius: 4px;
@@ -265,6 +344,8 @@ section.cards div.card {
 @media screen and (min-width: 1440px) {
   section.cards div.card {
     text-align: left;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     gap: 16px;
     padding-bottom: 24px;
@@ -281,17 +362,18 @@ section.cards div.card div.trash-bin {
   background-image: url("../images/trashbin.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #FF8484;
+  background-color: #ff8484;
 }
 section.cards div.card img {
   width: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
 }
 section.cards div.card h2 {
   font-weight: 600;
   font-size: 14px;
   line-height: 120%;
-  color: #3F3F3F;
+  color: #3f3f3f;
   margin: 5px 0 10px 0;
 }
 @media screen and (min-width: 1440px) {
@@ -323,9 +405,9 @@ section.cards div.card span {
   }
 }
 @media screen and (min-width: 1440px) {
-  section.cards div.card h2, section.cards div.card p, section.cards div.card span {
+  section.cards div.card h2,
+  section.cards div.card p,
+  section.cards div.card span {
     padding: 0 16px;
   }
 }
-
-/*# sourceMappingURL=index.css.map */
