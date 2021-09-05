@@ -1,0 +1,371 @@
+//сброс стилей браузера
+@import "../vendor/normalize.css";
+//шрифты
+@import "../vendor/fonts/source_sans_pro.css";
+@import "../vendor/fonts/inter.css";
+//переменные
+$general-font: "Source Sans Pro", serif;
+$additional-font: "Inter", serif;
+$background-color: #E5E5E5;
+$primary-color: #3F3F3F;
+$label-color: #49485E;
+$placeholder-color: #B4B4B4;
+$form-bg-color: #FFFEFB;
+$input-invalid-color: #FF8484;
+$btn-enable-color: #FFFFFF;
+$btn-enable-bg-color: #7BAE73;
+%for-flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hidden {
+  display: none;
+}
+
+//общий стиль страницы
+.page {
+  min-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  font: {
+    family: $general-font;
+    weight: normal;
+    style: normal;
+  }
+  background-color: $background-color;
+  color: $primary-color;
+  @extend %for-flexbox;
+  box-sizing: border-box;
+  padding: 20px;
+
+  @media screen and (min-width: 1000px) {
+    display: grid;
+    grid-template-areas: "heading select"
+                         "form cards";
+    grid-template-columns: 30% 70%;
+    grid-auto-rows: 36px 1fr;
+    gap: 16px;
+    justify-items: center;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 20% 80%;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 32px;
+    grid-template-columns: 332px 1028px;
+  }
+
+
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 100%;
+    color: $primary-color;
+    margin: 0 0 30px 0;
+    padding: 10px 0 0 0;
+    @media screen and (min-width: 1000px) {
+      margin: 0;
+      padding: 0;
+      align-self: center;
+      font-size: 28px;
+      line-height: 150%;
+      justify-self: left;
+    }
+  }
+
+  select {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 0 20px 0;
+    font-size: 12px;
+    line-height: 150%;
+    cursor: pointer;
+    @media screen and (min-width: 1000px) {
+      justify-self: right;
+      margin: 0;
+      padding: 10px 16px;
+    }
+
+    &:disabled {
+      background-color: $form-bg-color;
+      color: $placeholder-color;
+    }
+  }
+}
+
+.outline {
+  outline: 1px solid violet;
+}
+
+form {
+  @extend %for-flexbox;
+  width: 100%;
+  border-radius: 4px;
+  padding: 14px;
+  background-color: $form-bg-color;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
+  margin: 0 0 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  @media screen and (min-width: 800px) {
+    max-width: 80%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    max-width: 332px;
+    margin: 0;
+    padding: 24px;
+  }
+
+  label {
+    font-size: 10px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: $label-color;
+    width: max-content;
+    text-align: left;
+    align-self: flex-start;
+    margin: 0 0 4px 0;
+    position: relative;
+
+    span {
+      width: 4px;
+      height: 4px;
+      border-radius: 4px;
+      background-color: $input-invalid-color;
+      position: absolute;
+      top: 0;
+      right: -5px;
+    }
+
+  }
+
+  span.error {
+    color: $input-invalid-color;
+    font-size: 8px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    margin: -11px 0 5px 0;
+
+    &:last-of-type {
+      margin: 5px 0 0 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      align-self: flex-start;
+    }
+  }
+
+  //убирает стрелки у числового поля
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  //убирает стрелки у числового поля в firefox
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input {
+    @media screen and (min-width: 1440px) {
+      font-size: 12px;
+      line-height: 150%;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    &:valid:required:not(:focus) {
+      outline: none;
+
+      span.error {
+        display: none;
+      }
+    }
+
+    &:invalid:required:focus:not(:placeholder-shown) {
+      outline: 1px solid $input-invalid-color;
+    }
+
+    &:invalid:required:focus:not(:placeholder-shown) + span.error::before {
+      content: 'Поле является обязательным';
+      display: block;
+    }
+  }
+
+  button {
+    width: 100%;
+    max-width: 284px;
+    padding: 10px 0;
+    margin: 24px 0 0 0;
+    cursor: pointer;
+    border: none {
+      radius: 10px;
+    }
+    font: {
+      family: $additional-font;
+      weight: 600;
+      size: 12px;
+    }
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    &:disabled {
+      color: $placeholder-color;
+      cursor: default;
+    }
+
+    &:enabled {
+      color: $btn-enable-color;
+      background-color: $btn-enable-bg-color;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input, textarea {
+    border: none {
+      radius: 4px;
+    }
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    color: $primary-color;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
+    margin: 0 0 16px 0;
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  input:focus, textarea:focus {
+    outline: 1px solid gray;
+  }
+
+  &, input, textarea, button {
+    box-sizing: border-box;
+  }
+}
+
+section.cards {
+  width: 100%;
+  max-width: 1028px;
+  display: grid;
+  grid-gap: 12px;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  div.card {
+    @extend %for-flexbox;
+    background-color: $form-bg-color;
+    min-width: 320px;
+    width: 100%;
+    max-width: 332px;
+    padding: 0 0 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+
+    @media screen and (min-width: 1000px) {
+      padding: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+      text-align: left;
+      align-items: flex-start;
+      gap: 16px;
+      padding-bottom: 24px;
+    }
+
+    div.trash-bin {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 32px;
+      height: 32px;
+      border-radius: 30%;
+      cursor: pointer;
+      background: {
+        image: url("../images/trashbin.svg");
+        position: center;
+        repeat: no-repeat;
+        color: $input-invalid-color;
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+
+    h2 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 120%;
+      color: $primary-color;
+      margin: 5px 0 10px 0;
+      @media screen and (min-width: 1440px) {
+        font-size: 20px;
+        padding-top: 16px;
+        margin: 0;
+      }
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 120%;
+      margin: 0 0 15px 0;
+      @media screen and (min-width: 1440px) {
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      @media screen and (min-width: 1440px) {
+        font-size: 24px;
+      }
+    }
+
+    h2, p, span {
+      @media screen and (min-width: 1440px) {
+        padding: 0 16px;
+      }
+    }
+
+  }
+}
