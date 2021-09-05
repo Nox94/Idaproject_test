@@ -65,6 +65,9 @@ section.cards div.card, form, .page {
     margin: 0;
     padding: 0;
     align-self: center;
+    font-size: 28px;
+    line-height: 150%;
+    justify-self: left;
   }
 }
 .page select {
@@ -76,6 +79,7 @@ section.cards div.card, form, .page {
   margin: 0 0 20px 0;
   font-size: 12px;
   line-height: 150%;
+  cursor: pointer;
 }
 @media screen and (min-width: 1000px) {
   .page select {
@@ -113,6 +117,7 @@ form {
   form {
     max-width: 332px;
     margin: 0;
+    padding: 24px;
   }
 }
 form label {
@@ -158,6 +163,12 @@ form input::-webkit-inner-spin-button {
 form input[type=number] {
   -moz-appearance: textfield;
 }
+@media screen and (min-width: 1440px) {
+  form input {
+    font-size: 12px;
+    line-height: 150%;
+  }
+}
 form input:last-of-type {
   margin: 0;
 }
@@ -179,6 +190,7 @@ form button {
   max-width: 284px;
   padding: 10px 0;
   margin: 24px 0 0 0;
+  cursor: pointer;
   border: none;
   border-radius: 10px;
   font-family: "Inter", serif;
@@ -190,6 +202,7 @@ form button {
 }
 form button:disabled {
   color: #B4B4B4;
+  cursor: default;
 }
 form button:enabled {
   color: #FFFFFF;
@@ -281,7 +294,6 @@ section.cards div.card h2 {
   color: #3F3F3F;
   margin: 5px 0 10px 0;
 }
-
 @media screen and (min-width: 1440px) {
   section.cards div.card h2 {
     font-size: 20px;
@@ -294,26 +306,22 @@ section.cards div.card p {
   line-height: 120%;
   margin: 0 0 15px 0;
 }
-
 @media screen and (min-width: 1440px) {
   section.cards div.card p {
     font-size: 16px;
     margin: 0;
   }
 }
-
 section.cards div.card span {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
 }
-
 @media screen and (min-width: 1440px) {
   section.cards div.card span {
     font-size: 24px;
   }
 }
-
 @media screen and (min-width: 1440px) {
   section.cards div.card h2, section.cards div.card p, section.cards div.card span {
     padding: 0 16px;

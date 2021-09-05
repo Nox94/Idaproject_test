@@ -78,6 +78,9 @@ $btn-enable-bg-color: #7BAE73;
       margin: 0;
       padding: 0;
       align-self: center;
+      font-size: 28px;
+      line-height: 150%;
+      justify-self: left;
     }
   }
 
@@ -90,6 +93,7 @@ $btn-enable-bg-color: #7BAE73;
     margin: 0 0 20px 0;
     font-size: 12px;
     line-height: 150%;
+    cursor: pointer;
     @media screen and (min-width: 1000px) {
       justify-self: right;
       margin: 0;
@@ -126,6 +130,7 @@ form {
   @media screen and (min-width: 1000px) {
     max-width: 332px;
     margin: 0;
+    padding: 24px;
   }
 
   label {
@@ -180,6 +185,11 @@ form {
   }
 
   input {
+    @media screen and (min-width: 1440px) {
+      font-size: 12px;
+      line-height: 150%;
+    }
+
     &:last-of-type {
       margin: 0;
     }
@@ -207,6 +217,7 @@ form {
     max-width: 284px;
     padding: 10px 0;
     margin: 24px 0 0 0;
+    cursor: pointer;
     border: none {
       radius: 10px;
     }
@@ -221,6 +232,7 @@ form {
 
     &:disabled {
       color: $placeholder-color;
+      cursor: default;
     }
 
     &:enabled {
