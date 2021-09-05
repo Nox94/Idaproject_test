@@ -196,7 +196,6 @@ form {
       outline: 1px solid $input-invalid-color;
     }
 
-    // TODO: с этим надо разобраться. Как показывать текст ошибки?
     &:invalid:required:focus:not(:placeholder-shown) + span.error::before {
       content: 'Поле является обязательным';
       display: block;
@@ -260,15 +259,6 @@ form {
   }
 }
 
-//TODO: продумать сетку для карточек на grid-layout
-section.cards {
-  @extend %for-flexbox;
-
-  div {
-    margin: 0 0 20px 0;
-  }
-}
-
 section.cards {
   width: 100%;
   max-width: 1028px;
@@ -299,7 +289,10 @@ section.cards {
     }
 
     @media screen and (min-width: 1440px) {
+      text-align: left;
+      align-items: flex-start;
       gap: 16px;
+      padding-bottom: 24px;
     }
 
     div.trash-bin {
@@ -327,21 +320,40 @@ section.cards {
     h2 {
       font-weight: 600;
       font-size: 14px;
-      line-height: 25px;
+      line-height: 120%;
       color: $primary-color;
       margin: 5px 0 10px 0;
+      @media screen and (min-width: 1440px) {
+        font-size: 20px;
+        padding-top: 16px;
+        margin: 0;
+      }
     }
 
     p {
       font-size: 12px;
-      line-height: 20px;
+      line-height: 120%;
       margin: 0 0 15px 0;
+      @media screen and (min-width: 1440px) {
+        font-size: 16px;
+        margin: 0;
+      }
     }
 
     span {
       font-weight: 600;
       font-size: 16px;
-      line-height: 30px;
+      line-height: 150%;
+      @media screen and (min-width: 1440px) {
+        font-size: 24px;
+      }
     }
+
+    h2, p, span {
+      @media screen and (min-width: 1440px) {
+        padding: 0 16px;
+      }
+    }
+
   }
 }

@@ -2,7 +2,7 @@
 @import "../vendor/normalize.css";
 @import "../vendor/fonts/source_sans_pro.css";
 @import "../vendor/fonts/inter.css";
-section.cards div.card, section.cards, form, .page {
+section.cards div.card, form, .page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -219,10 +219,6 @@ form, form input, form textarea, form button {
   box-sizing: border-box;
 }
 
-section.cards div {
-  margin: 0 0 20px 0;
-}
-
 section.cards {
   width: 100%;
   max-width: 1028px;
@@ -255,7 +251,10 @@ section.cards div.card {
 }
 @media screen and (min-width: 1440px) {
   section.cards div.card {
+    text-align: left;
+    align-items: flex-start;
     gap: 16px;
+    padding-bottom: 24px;
   }
 }
 section.cards div.card div.trash-bin {
@@ -278,19 +277,47 @@ section.cards div.card img {
 section.cards div.card h2 {
   font-weight: 600;
   font-size: 14px;
-  line-height: 25px;
+  line-height: 120%;
   color: #3F3F3F;
   margin: 5px 0 10px 0;
 }
+
+@media screen and (min-width: 1440px) {
+  section.cards div.card h2 {
+    font-size: 20px;
+    padding-top: 16px;
+    margin: 0;
+  }
+}
 section.cards div.card p {
   font-size: 12px;
-  line-height: 20px;
+  line-height: 120%;
   margin: 0 0 15px 0;
 }
+
+@media screen and (min-width: 1440px) {
+  section.cards div.card p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
 section.cards div.card span {
   font-weight: 600;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 150%;
+}
+
+@media screen and (min-width: 1440px) {
+  section.cards div.card span {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  section.cards div.card h2, section.cards div.card p, section.cards div.card span {
+    padding: 0 16px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
